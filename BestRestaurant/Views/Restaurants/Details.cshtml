@@ -6,7 +6,8 @@
 
 <h2>Restaurant Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</p>
-<p>@Html.ActionLink("Delete Restaurant", "Delete", new { id = Model.RestaurantId })</p>
+<h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h4>
+  <br>
+<h6 class="btn btn-dark">@Html.ActionLink("Back to list", "Index")</h6>
+<h6 class="btn btn-dark">@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</h6>
+<h6 class="btn btn-dark">@Html.ActionLink("Delete Restaurant", "Delete", new { id = Model.RestaurantId })</h6>
