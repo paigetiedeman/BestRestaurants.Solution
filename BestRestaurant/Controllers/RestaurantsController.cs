@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace BestRestaurant.Controllers
 {
-  public class RestaurantController : Controller
+  public class RestaurantsController : Controller
   {
     private readonly BestRestaurantContext _db;
 
-    public RestaurantController(BestRestaurantContext db)
+    public RestaurantsController(BestRestaurantContext db)
     {
       _db = db;
     }
