@@ -6,15 +6,17 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this cuisine: @Html.DisplayFor(model => model.Type)</h4>
+<h4>Edit this Cuisine: @Html.DisplayFor(model => model.Type)</h4>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.CuisineId)
 
-  @Html.LabelFor(model => model.Type)
+  @Html.LabelFor(model => model.Type) 
+  <br>
   @Html.EditorFor(model => model.Type)
 
-  <input type="submit" value="Save" />
+  <input type="submit" value="Save" class="btn btn-dark"/>
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<p class="btn btn-dark">@Html.ActionLink("Back to list", "Index")</p>

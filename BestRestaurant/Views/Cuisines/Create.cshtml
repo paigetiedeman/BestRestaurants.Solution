@@ -4,12 +4,13 @@
 
 @model BestRestaurant.Models.Cuisine
 
-<h4>Add a new type of cuisine</h4>
+<h4>Add a New Type of Cuisine</h4>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Type)
-  @Html.TextBoxFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type, new {@class = "form-control"})
   <br>
-  <input type="submit" value="Add new cuisine" />
+  <input type="submit" value="Add new cuisine" class="btn btn-dark"/>
 }
-<p>@Html.ActionLink("Show all cuisines", "Index")</p>
+<br>
+<p class="btn btn-dark">@Html.ActionLink("Show all Cuisines", "Index")</p>
