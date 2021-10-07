@@ -6,13 +6,18 @@
 [![MIT License][license-shield]][license-url]
 
 
-# Best Restaurant
+# Best Restaurants
 
 </div>
 
-#### This is a C# web application using MySQL databases to collect restaurants and their associated cuisines.
-
 #### _By Paige Tiedeman & Nick Hennessy_  
+
+#### This is a C# web application using MySQL databases and Entity to collect restaurants, reviews and their associated cuisines.  
+
+
+<p align="center">
+  <img src="BestRestaurant/wwwroot/img/RelationshipTable.jpg">  
+</p>
 
 ## Technologies Used
 
@@ -23,6 +28,7 @@
 * HTML 
 * Bootstrap
 * MySQL Workbench
+* Entity
 
 ## Description
 
@@ -37,16 +43,14 @@ A website where users can add their favorite restaurants based on the type of cu
 * _Add the file BestRestaurant/appsettings.json and insert the following:_
 ```
 {
-    "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurant;uid=[YOUR-UID];pwd=[YOUR-PASSWORD-HERE];"
-    }
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurant;uid=[YOUR-UID];pwd=[YOUR-PASSWORD-HERE];"
+  }
 }
 ```
 * _Insert your MySQL password and user Id_
 * _Make sure to have .NET 5.0 installed_
 * _Run `$ dotnet restore` to install bin & obj folders_
-* _Run `$ dotnet test` in the test folder to see the passed tests_
-
 
 ## Steps To Use
 * _Launch MySQL Workbench and select "Create new SQL tab for executing queries"_
@@ -69,16 +73,23 @@ CREATE TABLE `cuisines` (
   `Type` varchar(255) DEFAULT NULL,  
   PRIMARY KEY (`CuisineId`)  
 );  
+DROP TABLE IF EXISTS `reviews`;
+CREATE TABLE `reviews` (
+  `ReviewId` int NOT NULL AUTO_INCREMENT,
+  `Description` varchar(255) DEFAULT NULL,
+  `RestaurantId` int DEFAULT '0',
+  PRIMARY KEY (`ReviewId`)
+);
 ```
 * _In your terminal navigate into BestRestaurant.Solution/BestRestaurant_
 * _Run `$ dotnet build` to build the site_
 * _Run `$ dotnet run` to start the live server_
-* _Click either button to see all restaurants or cuisines_
-* _After clicking add restaurant or cuisine put in your inputs and hit submit to reveal the list!_
+* _Click either button to see all restaurants, cuisines or reviews_
+* _After clicking add restaurant, cuisine or reviews put in your inputs and hit submit to reveal the list!_
 
 ## Known Bugs
 
-* _N/A_
+* _Auto Increment does not reset for tables_
 
 ## License
 
