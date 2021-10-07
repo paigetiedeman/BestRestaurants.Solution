@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.IActionResult;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using BestRestaurant.Models;
@@ -70,6 +71,16 @@ namespace BestRestaurant.Controllers
       _db.Restaurants.Remove(thisRestaurant);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public async Task<IActionResult> Index(string searchString)
+    {
+      var restaurants =
+      if (!String.IsNullOrEmpty(searchString))
+      {
+        restaurants = restaurants.Where(s => s.Name.Contains(searchString));
+      }
+      View(await restaurants.ToListAsync());
     }
 
     // public ActionResult Search()
