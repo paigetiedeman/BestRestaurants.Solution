@@ -38,11 +38,11 @@ A website where users can add their favorite restaurants based on the type of cu
 ```
 {
     "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurant;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+        "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurant;uid=[YOUR-UID];pwd=[YOUR-PASSWORD-HERE];"
     }
 }
 ```
-* _Insert your MySQL password_
+* _Insert your MySQL password and user Id_
 * _Make sure to have .NET 5.0 installed_
 * _Run `$ dotnet restore` to install bin & obj folders_
 * _Run `$ dotnet test` in the test folder to see the passed tests_
