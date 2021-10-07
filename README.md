@@ -8,16 +8,18 @@
 
 # Best Restaurants
 
-</div>
 
 #### _By Paige Tiedeman & Nick Hennessy_  
 
+<br>
+
 #### This is a C# web application using MySQL databases and Entity to collect restaurants, reviews and their associated cuisines.  
 
+<br>
 
-<p align="center">
   <img src="BestRestaurant/wwwroot/img/RelationshipTable.jpg">  
-</p>
+  
+</div>
 
 ## Technologies Used
 
@@ -90,6 +92,7 @@ CREATE TABLE `reviews` (
 ## Known Bugs
 
 * _Auto Increment does not reset for tables_
+* _WIP: Showing reviews on Restaurant/Index_
 
 ## License
 

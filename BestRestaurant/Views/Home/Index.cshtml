@@ -2,8 +2,10 @@
   Layout = "_Layout";
 }
 
+<div class="jumbotron">
 <h1>Welcome to Your Restaurant List!</h1>
+</div>
 
-<p class="btn btn-dark btn-block">@Html.ActionLink("See all Restaurants", "Index", "Restaurants")</p> 
-<p class="btn btn-dark btn-block">@Html.ActionLink("See all Cuisines", "Index", "Cuisines")</p>
-<p class="btn btn-dark btn-block">@Html.ActionLink("See all Reviews", "Index", "Reviews")</p>
+<p class="btn btn-dark btn-block">@Html.ActionLink("See all Restaurants", "Index", "Restaurants", null, new { style = "color:white"})</p> 
+<p class="btn btn-dark btn-block">@Html.ActionLink("See all Cuisines", "Index", "Cuisines", null, new { style = "color:white"})</p>
+<p class="btn btn-dark btn-block">@Html.ActionLink("See all Reviews", "Index", "Reviews", null, new { style = "color:white"})</p>

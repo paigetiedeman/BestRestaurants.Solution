@@ -8,6 +8,6 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)<h3>
   
-<p class="btn btn-dark">@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.CuisineId })</p>
+<p class="btn btn-dark">@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.CuisineId, style = "color:white"})</p>
 <p class="btn btn-dark">@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.CuisineId })</p>
-<p class="btn btn-dark">@Html.ActionLink("Back to list", "Index")</p>
+<p class="btn btn-dark">@Html.ActionLink("Back to list", "Index", null, new {style = "color:white"})</p>

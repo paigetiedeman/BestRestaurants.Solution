@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.IActionResult;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using BestRestaurant.Models;
@@ -49,7 +48,7 @@ namespace BestRestaurant.Controllers
       ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Type");
       return View(thisRestaurant);
     }
-
+    
     [HttpPost]
     public ActionResult Edit(Restaurant restaurant)
     {
@@ -72,27 +71,16 @@ namespace BestRestaurant.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-    public async Task<IActionResult> Index(string searchString)
+    public ActionResult Search()
     {
-      var restaurants =
-      if (!String.IsNullOrEmpty(searchString))
-      {
-        restaurants = restaurants.Where(s => s.Name.Contains(searchString));
-      }
-      View(await restaurants.ToListAsync());
+      return View();
     }
-
-    // public ActionResult Search()
-    // {
-    //   ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Type");
-    //   return View():
-    // }
-    // [HttpPost, ActionName("Search")]
-    // public ActionResult Search(string searchType)
-    // {
-
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Search(string name)
+    {
+      string searchType = name.ToLower();
+      List<Restaurant> results = _db.Restaurants.Where(restaurant => restaurant.Name.ToLower().Contains(searchType)).ToList();
+      return View("Index", results);
+    }
   }
 }

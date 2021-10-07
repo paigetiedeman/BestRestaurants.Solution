@@ -9,6 +9,8 @@
 
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(model => model.RestaurantId)
+    
     @Html.LabelFor(model => model.Description)
     @Html.TextBoxFor(model => model.Description, new { @class = "form-control"})
     <br>

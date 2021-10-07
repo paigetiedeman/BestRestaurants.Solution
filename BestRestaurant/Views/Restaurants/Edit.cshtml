@@ -8,18 +8,16 @@
 
 @using (Html.BeginForm())
 {
-<div class="form-group">
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name, new {@class = "form-control", @required = "required"})
-</div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Name, new {@class = "form-label"})
+    @Html.EditorFor(model => model.Name, new {@class = "form-control", @required = "required"})
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Cuisine)
+    @Html.DropDownList("CuisineId", null, new {@class = "form-control"})
+  </div>
 
-<div class="form-group">
-  @Html.LabelFor(model => model.Cuisine)
-  @Html.DropDownList("CuisineId")
-</div>
-
-<div class="form-group">
-  <input type="submit" value="Add new restaurant" class="btn btn-dark"/>
-</div>
+  <input type="submit" value="Save" class="btn btn-dark"/>
 }
+<br>
 <p class="btn btn-dark">@Html.ActionLink("Back to list", "Index")</p>

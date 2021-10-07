@@ -6,6 +6,7 @@
 @model List<BestRestaurant.Models.Restaurant>;
 
 <h1>Restaurants</h1>
+<hr>
 
 @if (@Model.Count == 0)
 {
@@ -14,10 +15,17 @@
 
 @foreach (Restaurant restaurant in Model)
 {
-  <li>@Html.ActionLink($"{restaurant.Name}", "Details", new { id = restaurant.RestaurantId }) | @restaurant.Cuisine.Type | @restaurant.Price | @restaurant.Rating </li>
+  <li>@Html.ActionLink($"{restaurant.Name}", "Details", new { id = restaurant.RestaurantId, style = "color:white;" }) | @restaurant.Cuisine.Type | @restaurant.Price | @restaurant.Rating </li>
+    @* <ol>
+      <li>@Html.ActionLink($"{Review.Description}", new { id = review.ReviewId})</li>
+    </ol> *@
 }
 
 <br>
-<p class="btn btn-dark">@Html.ActionLink("Add New Restaurant", "Create")</p>
-<p class="btn btn-dark">@Html.ActionLink("Add New Cuisine", "Create", "Cuisines")</p>
-<p class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home")</p>
+<p class="btn btn-dark">@Html.ActionLink("Add New Restaurant", "Create", new { style = "color:white"})</p>
+<p class="btn btn-dark">@Html.ActionLink("Add New Cuisine", "Create", "Cuisines", null, new { style = "color:white"})</p>
+<p class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home", null, new { style = "color:white"})</p>
+<p class="btn btn-dark">@Html.ActionLink("Search", "Search", new { style = "color:white"})</p>
+<br>
+
+

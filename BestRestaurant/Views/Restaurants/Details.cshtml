@@ -8,7 +8,9 @@
 <hr />
 <h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h4>
   <br>
+  @* <p>@Html.DisplayFor(model =>model.Reviews)</p> *@
+  
 <h6 class="btn btn-dark">@Html.ActionLink("Back to list", "Index")</h6>
-<h6 class="btn btn-dark">@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</h6>
+<h6 class="btn btn-dark">@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId})</h6>
 <h6 class="btn btn-dark">@Html.ActionLink("Delete Restaurant", "Delete", new { id = Model.RestaurantId })</h6>
 <h6 class="btn btn-dark">@Html.ActionLink("Add a Review", "Create", "Reviews", new { id = Model.RestaurantId})

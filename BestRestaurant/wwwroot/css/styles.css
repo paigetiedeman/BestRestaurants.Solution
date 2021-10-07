@@ -1,7 +1,23 @@
-h1, h4 {
+h1, h2, h3, h4 {
   text-align: center;
+  font-family: 'Corben', Georgia, Times, serif;
 }
 
 input {
   margin-top: 15px;
+}
+
+p, div, input {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  color: white !important;
+}
+
+.jumbotron {
+  background-image: url('/img/background.jpg');
+  box-shadow: inset -5px -40px 30px 2px #BBA3A0;
+  color: white;
+}
+
+body {
+  background-color: #BBA3A0;
 }
