@@ -1,12 +1,18 @@
+<div align="center">
+
 [![Language][language-shield]][language-url]
 [![Language][languageH-shield]][languageH-url]
+[![Language][languageC-shield]][languageC-url]
 [![MIT License][license-shield]][license-url]
+
 
 # Best Restaurant
 
+</div>
+
 #### This is a C# web application using MySQL databases to collect restaurants and their associated cuisines.
 
-#### _By Paige Tiedeman & Nick Hennessy_
+#### _By Paige Tiedeman & Nick Hennessy_  
 
 ## Technologies Used
 
@@ -52,6 +58,8 @@ DROP TABLE IF EXISTS `restaurants`;
 CREATE TABLE `restaurants` (  
   `RestaurantId` int NOT NULL AUTO_INCREMENT,  
   `Name` varchar(255) DEFAULT NULL,  
+  `Price` varchar(255) DEFAULT NULL,   
+  `Rating` varchar(255) DEFAULT NULL,  
   `CuisineId` int DEFAULT '0',  
   PRIMARY KEY (`RestaurantId`)  
 );   
@@ -84,7 +92,9 @@ _Nick Hennessy_
 
 [license-shield]: https://img.shields.io/badge/License-MIT-blue
 [license-url]: https://opensource.org/licenses/MIT
-[language-shield]: https://img.shields.io/badge/Language-C%23-red
+[language-shield]: https://img.shields.io/badge/Language-C%23-green
 [language-url]: https://docs.microsoft.com/en-us/dotnet/csharp/
-[LanguageH-shield]: https://img.shields.io/badge/Language-HTML-blueviolet
+[LanguageH-shield]: https://img.shields.io/badge/Language-HTML-red
 [LanguageH-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
+[LanguageC-shield]: https://img.shields.io/badge/Language-CSS-blueviolet
+[LanguageC-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
